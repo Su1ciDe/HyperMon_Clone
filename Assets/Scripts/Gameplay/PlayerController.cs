@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float leftLimit;
 	[SerializeField] private float rightLimit;
 
-	private Player player => Player.Instance;
-
 	private Vector3 playerPos;
 	private float previousPosX;
 
