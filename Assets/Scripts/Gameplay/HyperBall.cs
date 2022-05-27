@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
 
-public class HyperBall : MonoBehaviour
+public class HyperBall : Collectable
 {
 	public int Value = 50;
 
-	private void OnTriggerEnter(Collider other)
+
+	public override void OnCollect(Player player)
 	{
-		if (other.isTrigger && other.attachedRigidbody && other.attachedRigidbody.TryGetComponent(out HyperMonController hyperMonController))
-		{
-			hyperMonController.CollectHyperBall(this);
-			
-			// particle effects
-			gameObject.SetActive(false);
-		}
+		player.HyperMonController.CollectHyperBall(this);
+
+		// particle effects
+		gameObject.SetActive(false);
 	}
 }
