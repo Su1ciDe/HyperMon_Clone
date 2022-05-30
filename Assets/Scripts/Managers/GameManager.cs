@@ -2,10 +2,13 @@
 
 public class GameManager : Singleton<GameManager>
 {
-	public static Camera MainCamera;
-
-	private void Awake()
+	private static Camera mainCamera;
+	public static Camera MainCamera
 	{
-		MainCamera = Camera.main;
+		get
+		{
+			if (!mainCamera) mainCamera = Camera.main;
+			return mainCamera;
+		}
 	}
 }

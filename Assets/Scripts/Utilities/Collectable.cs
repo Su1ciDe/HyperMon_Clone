@@ -10,5 +10,5 @@ public abstract class Collectable : MonoBehaviour
 		}
 	}
 
-	public abstract void OnCollect(Player player);
+	protected abstract void OnCollect(Player player);
 }

@@ -4,12 +4,12 @@ public class HyperBall : Collectable
 {
 	public int Value = 50;
 
-
-	public override void OnCollect(Player player)
+	protected override void OnCollect(Player player)
 	{
 		player.HyperMonController.CollectHyperBall(this);
 
-		// particle effects
+		//TODO: particle effects
+		
 		gameObject.SetActive(false);
 	}
 }

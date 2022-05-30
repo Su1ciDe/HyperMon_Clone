@@ -7,6 +7,8 @@ public class HyperMonController : MonoBehaviour
 
 	public void CollectHyperBall(HyperBall hyperBall)
 	{
+		Player.Instance.TotalHyperPoint += hyperBall.Value;
+		
 		//
 		
 		OnHyperBallCollect?.Invoke(hyperBall);
