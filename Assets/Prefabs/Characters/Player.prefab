@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -643,6 +643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59a1ccc936c47d9b8f7e7570cebc3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHyperMonCount: 3
+  hyperMonPrefab: {fileID: 0}
+  hyperMonHolder: {fileID: 0}
 --- !u!1001 &6325837848834430181
 PrefabInstance:
   m_ObjectHideFlags: 0
