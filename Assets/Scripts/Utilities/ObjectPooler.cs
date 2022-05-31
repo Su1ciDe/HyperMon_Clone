@@ -7,11 +7,8 @@ public class ObjectPooler : Singleton<ObjectPooler>
 	[Serializable]
 	public class Pool
 	{
-		[Tooltip("Give a tag to the pool for calling it")]
 		public string Tag;
-		[Tooltip("The prefab to be pooled")]
 		public GameObject Prefab;
-		[Tooltip("The size (count) of the pool")]
 		public int Size;
 	}
 

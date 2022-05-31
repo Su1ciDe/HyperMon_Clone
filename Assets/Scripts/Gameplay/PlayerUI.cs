@@ -19,11 +19,16 @@ public class PlayerUI : MonoBehaviour
 
 	private void OnHyperBallCollect(HyperBall ball)
 	{
+		ChangePoint();
+	}
+
+	private void ChangePoint()
+	{
 		int currentPoint = int.Parse(txtHyperPoint.text);
 		int nextPoint = Player.Instance.TotalHyperPoint;
 
-		DOTween.Complete("pointUpdate");
-		DOTween.To(() => currentPoint, x => currentPoint = x, nextPoint, pointAnimationDuration).SetEase(Ease.OutCubic).SetId("pointUpdate")
+		txtHyperPoint.DOComplete();
+		DOTween.To(() => currentPoint, x => currentPoint = x, nextPoint, pointAnimationDuration).SetEase(Ease.OutCubic).SetTarget(txtHyperPoint)
 			.OnUpdate(() => txtHyperPoint.SetText(Mathf.CeilToInt(currentPoint).ToString()));
 	}
 }
