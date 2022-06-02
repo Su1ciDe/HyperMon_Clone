@@ -8,7 +8,7 @@ public class HyperMonController : MonoBehaviour
 	public int HyperMonCount => HyperMons.Count;
 
 	[Range(1, 6)]
-	[SerializeField] private int maxHyperMonCount = 3;
+	public int maxHyperMonCount = 3;
 
 	[Space]
 	public HyperMon hyperMonPrefab;

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984d0fa8b0e4d71a502ac087feb88a4, type: 3}
+  m_Name: Shade
+  m_EditorClassIdentifier: 
+  Name: Shade
+  Power: 16
+  Rarity: 1
+  Model: {fileID: 3885180964893898148, guid: 2bc200ff9d022b043b17a18e0a43cdfc, type: 3}
+  Image: {fileID: 21300000, guid: b56a6f384dba8e1409689dd37f1061c2, type: 3}

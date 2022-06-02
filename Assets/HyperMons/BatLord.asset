@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984d0fa8b0e4d71a502ac087feb88a4, type: 3}
+  m_Name: BatLord
+  m_EditorClassIdentifier: 
+  Name: Bat Lord
+  Power: 18
+  Rarity: 1
+  Model: {fileID: 919132149155446097, guid: 759576066a3c24149b6186fc3ecc58d4, type: 3}
+  Image: {fileID: 21300000, guid: 9bcaff09b5367294b9506be9a13a3b20, type: 3}

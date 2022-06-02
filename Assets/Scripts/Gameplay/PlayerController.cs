@@ -2,7 +2,7 @@
 
 public class PlayerController : MonoBehaviour
 {
-	public bool CanPlay { get; set; } = true;
+	public bool CanControl { get; set; } = true;
 
 	[SerializeField] private float dragMultiplier = 1;
 	[Space]
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Inputs()
 	{
-		if (!CanPlay) return;
+		if (!CanControl) return;
 
 		if (Input.GetMouseButtonDown(0))
 		{

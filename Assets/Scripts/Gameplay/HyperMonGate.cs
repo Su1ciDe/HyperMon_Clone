@@ -21,12 +21,12 @@ public class HyperMonGate : Gate
 		{
 			player.HyperMonController.EnterGate(hyperMonAttributes);
 		}
-		else
+		else if (player.HyperMonController.HyperMonCount < player.HyperMonController.maxHyperMonCount)
 			player.PlayerMovement.JumpBack();
 
 		gameObject.SetActive(false);
 	}
-	
+
 #if UNITY_EDITOR
 	private void OnValidate()
 	{

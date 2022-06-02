@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984d0fa8b0e4d71a502ac087feb88a4, type: 3}
+  m_Name: BatVampire
+  m_EditorClassIdentifier: 
+  Name: Vampire Bat
+  Power: 28
+  Rarity: 0
+  Model: {fileID: 7673240901415273377, guid: 211e8390d858f1449ae22cc8b1b10b31, type: 3}
+  Image: {fileID: 21300000, guid: 30f9f8db2ba30f04a9e100c4eb260e3f, type: 3}

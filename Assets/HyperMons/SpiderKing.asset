@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0984d0fa8b0e4d71a502ac087feb88a4, type: 3}
+  m_Name: SpiderKing
+  m_EditorClassIdentifier: 
+  Name: Spider King
+  Power: 20
+  Rarity: 1
+  Model: {fileID: 3901773045805587674, guid: 203d10226ed34e54eab50845a406485b, type: 3}
+  Image: {fileID: 21300000, guid: eda47b8efef9aa84ab9ea6dd41b11f3c, type: 3}
