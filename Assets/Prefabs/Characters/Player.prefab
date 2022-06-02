@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &609288601758933573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6646672923774181707}
+  m_Layer: 6
+  m_Name: HyperMonsHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6646672923774181707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609288601758933573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6325837848769955256}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6325837846727361206
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +601,7 @@ Transform:
   - {fileID: 6325837847841297412}
   - {fileID: 6325837848113033671}
   - {fileID: 6325837846972663596}
+  - {fileID: 6646672923774181707}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -644,8 +675,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHyperMonCount: 3
-  hyperMonPrefab: {fileID: 0}
-  hyperMonHolder: {fileID: 0}
+  hyperMonPrefab: {fileID: 1189059286242665654, guid: 282a64c77f0c926438bf1eb486df8cf1, type: 3}
+  hyperMonHolder: {fileID: 6646672923774181707}
+  followDamping: 10
 --- !u!1001 &6325837848834430181
 PrefabInstance:
   m_ObjectHideFlags: 0

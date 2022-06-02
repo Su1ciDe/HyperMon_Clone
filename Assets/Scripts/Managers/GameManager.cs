@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -13,4 +14,7 @@ public class GameManager : Singleton<GameManager>
 	}
 
 	public ColorScheme ColorScheme;
+
+	[Space]
+	public CinemachineTargetGroup CamTargetGroup;
 }

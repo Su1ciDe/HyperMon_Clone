@@ -18,13 +18,16 @@ public class HyperMonGate : Gate
 	protected override void OnEnter(Player player)
 	{
 		if (player.TotalHyperPoint >= cost)
+		{
 			player.HyperMonController.EnterGate(hyperMonAttributes);
+		}
 		else
 			player.PlayerMovement.JumpBack();
 
 		gameObject.SetActive(false);
 	}
-
+	
+#if UNITY_EDITOR
 	private void OnValidate()
 	{
 		if (!hyperMonAttributes) return;
@@ -35,6 +38,8 @@ public class HyperMonGate : Gate
 		txtRarity.SetText(hyperMonAttributes.Rarity.ToString());
 
 		imgHyperMon.sprite = hyperMonAttributes.Image;
-		imgBg.color = GameManager.Instance.ColorScheme.RarityColorPairs[hyperMonAttributes.Rarity];
+		if (GameManager.Instance && GameManager.Instance.ColorScheme.RarityColorPairs.Count > 0)
+			imgBg.color = GameManager.Instance.ColorScheme.RarityColorPairs[hyperMonAttributes.Rarity];
 	}
+#endif
 }
