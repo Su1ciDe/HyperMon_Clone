@@ -22,6 +22,7 @@ public class HyperMonController : MonoBehaviour
 
 	private Player player => Player.Instance;
 
+	public static event UnityAction<HyperMon> OnHyperMonAdd;
 	public static event UnityAction<HyperBall> OnHyperBallCollect;
 
 	private void LateUpdate()
@@ -56,6 +57,8 @@ public class HyperMonController : MonoBehaviour
 		GameManager.Instance.CamTargetGroup.AddMember(hyperMon.transform, 1, 0);
 
 		AdjustHyperMonsPositions();
+		
+		OnHyperMonAdd?.Invoke(hyperMon);
 	}
 
 	private void AdjustHyperMonsPositions()

@@ -12,7 +12,7 @@ public class HyperMon : MonoBehaviour
 	{
 		HyperMonAttributes = hyperMonSO;
 
-		var go = Instantiate(HyperMonAttributes.Model, modelHolder);
+		Instantiate(HyperMonAttributes.Model, modelHolder);
 		txtPower.SetText(HyperMonAttributes.Power.ToString());
 	}
 }
