@@ -2,7 +2,7 @@
 
 public class PlayerController : MonoBehaviour
 {
-	public bool CanControl { get; set; } = true;
+	public bool CanControl { get; set; }
 
 	[SerializeField] private float dragMultiplier = 1;
 	[Space]

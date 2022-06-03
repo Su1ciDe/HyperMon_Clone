@@ -20,6 +20,9 @@ public class GameManager : Singleton<GameManager>
 
 	public void Finish()
 	{
-		
+		if (Player.Instance.Score >= Arena.Instance.Enemy.Score)
+			LevelManager.Instance.GameSuccess();
+		else
+			LevelManager.Instance.GameFail();
 	}
 }

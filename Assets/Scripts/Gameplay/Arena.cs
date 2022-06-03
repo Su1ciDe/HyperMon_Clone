@@ -29,6 +29,9 @@ public class Arena : Singleton<Arena>
 	{
 		if (other.isTrigger && other.attachedRigidbody && other.attachedRigidbody.TryGetComponent(out Player player))
 		{
+			player.PlayerController.CanControl = false;
+			player.PlayerMovement.CanMove = false;
+			
 			vcam_Arena.gameObject.SetActive(true);
 
 			player.transform.DOMove(playerPosition.position, 1f).SetEase(Ease.Linear).OnComplete(() => StartCoroutine(Duel()));
@@ -42,7 +45,7 @@ public class Arena : Singleton<Arena>
 
 		yield return Enemy.ThrowHyperBall();
 
-		UIManager.Instance.ArenaUI.CardPanel.SetActive(true);
+		UIManager.Instance.ArenaUI.CardPanel.gameObject.SetActive(true);
 	}
 
 	public IEnumerator Fight()

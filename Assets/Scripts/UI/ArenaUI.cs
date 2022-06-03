@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ArenaUI : MonoBehaviour
 {
-	public GameObject CardPanel;
 	
 	[Header("Trainers")]
 	public TextMeshProUGUI txtPlayerScore;
@@ -11,8 +10,7 @@ public class ArenaUI : MonoBehaviour
 		
 	[Header("Cards")]
 	[SerializeField] private Card cardPrefab;
-	[SerializeField] private Transform cardsPanel;
-
+	public Transform CardPanel;
 	
 	private void OnEnable()
 	{
@@ -28,12 +26,12 @@ public class ArenaUI : MonoBehaviour
 
 	public void AddCard(HyperMon addedHyperMon)
 	{
-		var card = Instantiate(cardPrefab, cardsPanel);
+		var card = Instantiate(cardPrefab, CardPanel);
 		card.Setup(addedHyperMon);
 	}
 
 	private void OnCardSelected(HyperMon hyperMon)
 	{
-		CardPanel.SetActive(false);
+		CardPanel.gameObject.SetActive(false);
 	}
 }

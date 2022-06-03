@@ -671,11 +671,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c510bf507143abbbbfec51f2c9a0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPanel: {fileID: 0}
   txtPlayerScore: {fileID: 124815095583227580}
   txtEnemyScore: {fileID: 124815097532615122}
   cardPrefab: {fileID: 5502739876267624892, guid: 5c016841c65f8894c9f6f7017e2a6f94, type: 3}
-  cardsPanel: {fileID: 124815096999782862}
+  CardPanel: {fileID: 124815096999782862}
 --- !u!1 &124815096897335446
 GameObject:
   m_ObjectHideFlags: 0

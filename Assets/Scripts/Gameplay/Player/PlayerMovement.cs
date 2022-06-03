@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public bool CanMove { get; set; } = true;
+	public bool CanMove { get; set; }
 
 	[SerializeField] private float moveSpeed = 500;
 	[SerializeField] private float moveSpeedMultiplier = 1;
