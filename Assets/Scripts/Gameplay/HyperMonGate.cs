@@ -27,6 +27,7 @@ public class HyperMonGate : Gate
 		gameObject.SetActive(false);
 	}
 
+	// When you insert a "HyperMonSO" into the slot it updates gate's attributes
 #if UNITY_EDITOR
 	private void OnValidate()
 	{

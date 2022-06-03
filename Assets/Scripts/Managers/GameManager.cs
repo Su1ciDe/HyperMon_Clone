@@ -17,4 +17,9 @@ public class GameManager : Singleton<GameManager>
 
 	[Space]
 	public CinemachineTargetGroup CamTargetGroup;
+
+	public void Finish()
+	{
+		
+	}
 }
