@@ -10,14 +10,21 @@ public class PlayerUI : MonoBehaviour
 	private void OnEnable()
 	{
 		HyperMonController.OnHyperBallCollect += OnHyperBallCollect;
+		HyperMonController.OnHyperMonAdd += OnHyperMonAdded;
 	}
 
 	private void OnDisable()
 	{
 		HyperMonController.OnHyperBallCollect -= OnHyperBallCollect;
+		HyperMonController.OnHyperMonAdd -= OnHyperMonAdded;
 	}
 
 	private void OnHyperBallCollect(HyperBall ball)
+	{
+		ChangePoint();
+	}
+
+	private void OnHyperMonAdded(HyperMon hyperMon)
 	{
 		ChangePoint();
 	}

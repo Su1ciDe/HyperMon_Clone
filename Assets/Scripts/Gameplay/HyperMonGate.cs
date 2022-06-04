@@ -17,10 +17,10 @@ public class HyperMonGate : Gate
 
 	protected override void OnEnter(Player player)
 	{
+		if (!player.HyperMonController.CanEnterGate) return;
+
 		if (player.TotalHyperPoint >= cost)
-		{
-			player.HyperMonController.EnterGate(hyperMonAttributes);
-		}
+			player.HyperMonController.EnterGate(hyperMonAttributes, cost);
 		else if (player.HyperMonController.HyperMonCount < player.HyperMonController.maxHyperMonCount)
 			player.PlayerMovement.JumpBack();
 

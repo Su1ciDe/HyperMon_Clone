@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class ArenaUI : MonoBehaviour
 {
-	
 	[Header("Trainers")]
 	public TextMeshProUGUI txtPlayerScore;
 	public TextMeshProUGUI txtEnemyScore;
-		
+
 	[Header("Cards")]
 	[SerializeField] private Card cardPrefab;
 	public Transform CardPanel;
-	
+
 	private void OnEnable()
 	{
 		HyperMonController.OnHyperMonAdd += AddCard;

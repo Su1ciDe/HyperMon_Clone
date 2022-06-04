@@ -31,6 +31,7 @@ public class Arena : Singleton<Arena>
 		{
 			player.PlayerController.CanControl = false;
 			player.PlayerMovement.CanMove = false;
+			player.HyperMonController.CanFollow = false;
 			
 			vcam_Arena.gameObject.SetActive(true);
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,6 +7,9 @@ using UnityEngine.Events;
 public class HyperMonController : MonoBehaviour
 {
 	public bool CanFollow { get; set; } = true;
+	public bool CanEnterGate { get; set; } = true;
+	private const float gateTriggerCooldown = .5f;
+
 	public List<HyperMon> HyperMons { get; private set; } = new List<HyperMon>();
 	public int HyperMonCount => HyperMons.Count;
 
@@ -57,19 +61,22 @@ public class HyperMonController : MonoBehaviour
 		Arena.OnSelectForDuel -= ThrowHyperBall;
 	}
 
-	public void CollectHyperBall(HyperBall _hyperBall)
+	public void CollectHyperBall(HyperBall collectedHyperBall)
 	{
-		player.TotalHyperPoint += _hyperBall.Value;
+		player.TotalHyperPoint += collectedHyperBall.Value;
 
 		//
 
-		OnHyperBallCollect?.Invoke(_hyperBall);
+		OnHyperBallCollect?.Invoke(collectedHyperBall);
 	}
 
-	public void EnterGate(HyperMonSO hyperMonSO)
+	public void EnterGate(HyperMonSO hyperMonSO, int cost)
 	{
 		if (HyperMonCount >= maxHyperMonCount) return;
 
+		StartCoroutine(GateCooldown());
+
+		player.TotalHyperPoint -= cost;
 		var hyperMon = Instantiate(HyperMonPrefab, hyperMonsHolder);
 		hyperMon.Setup(hyperMonSO);
 		hyperMon.Trainer = TrainerType.Player;
@@ -79,6 +86,13 @@ public class HyperMonController : MonoBehaviour
 		AdjustHyperMonsPositions();
 
 		OnHyperMonAdd?.Invoke(hyperMon);
+	}
+
+	private IEnumerator GateCooldown()
+	{
+		CanEnterGate = false;
+		yield return new WaitForSeconds(gateTriggerCooldown);
+		CanEnterGate = true;
 	}
 
 	private void AdjustHyperMonsPositions()
