@@ -8,8 +8,11 @@ public class HyperBall : Collectable
 	{
 		collector.OnCollect(this);
 
-		//TODO: particle effects
-		
+		ParticleSystem particle = Value > 0
+			? ObjectPooler.Instance.Spawn("HyperBallGreen", transform.position).GetComponent<ParticleSystem>()
+			: ObjectPooler.Instance.Spawn("HyperBallBlack", transform.position).GetComponent<ParticleSystem>();
+		particle.Play();
+
 		gameObject.SetActive(false);
 	}
 }
