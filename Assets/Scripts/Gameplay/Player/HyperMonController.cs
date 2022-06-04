@@ -117,10 +117,11 @@ public class HyperMonController : MonoBehaviour
 
 		Sequence seq = DOTween.Sequence();
 		hyperBall.SetActive(true);
-		//TODO: animation
+		
+		player.Animations.SetTrigger(AnimationType.Throw);
 		seq.AppendInterval(.25f);
 		seq.AppendCallback(() => hyperBall.transform.SetParent(null));
-		seq.Append(hyperBall.transform.DOJump(Arena.Instance.PlayerHmPosition.position, 3, 1, .75f));
+		seq.Append(hyperBall.transform.DOJump(Arena.Instance.PlayerHmPosition.position, 4, 1, .75f));
 		seq.Join(hyperBall.transform.DORotate(720 * Vector3.right, .75f, RotateMode.FastBeyond360).SetEase(Ease.Linear));
 		seq.AppendCallback(() =>
 		{

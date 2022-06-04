@@ -37,7 +37,12 @@ public class Arena : Singleton<Arena>
 			vcam_Arena.gameObject.SetActive(true);
 
 			player.transform.localScale = 3 * Vector3.one;
-			player.transform.DOMove(playerPosition.position, 1f).SetEase(Ease.Linear).OnComplete(() => StartCoroutine(Duel()));
+			player.transform.DOMove(playerPosition.position, 1f).SetEase(Ease.Linear).OnComplete(() =>
+			{
+				player.Animations.SetBool(AnimationType.Running, false);
+
+				StartCoroutine(Duel());
+			});
 		}
 	}
 

@@ -12,15 +12,22 @@ public class Enemy : MonoBehaviour
 		{
 			score = value;
 			UIManager.Instance.ArenaUI.txtEnemyScore.SetText(score.ToString());
-			Debug.Log(score);
 		}
 	}
+
+	public AnimationController Animations { get; private set; }
 
 	[SerializeField] private List<HyperMonSO> enemyHyperMons = new List<HyperMonSO>();
 	private List<HyperMon> hyperMons = new List<HyperMon>();
 
 	[SerializeField] private Transform hyperBallHolder;
 	private GameObject hyperBall;
+
+	private void Awake()
+	{
+		hyperBall = hyperBallHolder.GetChild(0).gameObject;
+		Animations = GetComponentInChildren<AnimationController>();
+	}
 
 	private void Start()
 	{
@@ -32,8 +39,6 @@ public class Enemy : MonoBehaviour
 			newHyperMon.gameObject.SetActive(false);
 			hyperMons.Add(newHyperMon);
 		}
-
-		hyperBall = hyperBallHolder.GetChild(0).gameObject;
 	}
 
 	public YieldInstruction ThrowHyperBall()
@@ -44,10 +49,11 @@ public class Enemy : MonoBehaviour
 
 		Sequence seq = DOTween.Sequence();
 		hyperBall.SetActive(true);
-		//TODO: animation
+
+		Animations.SetTrigger(AnimationType.Throw);
 		seq.AppendInterval(.25f);
 		seq.AppendCallback(() => hyperBall.transform.SetParent(null));
-		seq.Append(hyperBall.transform.DOJump(Arena.Instance.EnemyHmPosition.position, 3, 1, .75f));
+		seq.Append(hyperBall.transform.DOJump(Arena.Instance.EnemyHmPosition.position, 4, 1, .75f));
 		seq.Join(hyperBall.transform.DORotate(720 * Vector3.right, .75f, RotateMode.FastBeyond360).SetEase(Ease.Linear));
 		seq.AppendCallback(() =>
 		{

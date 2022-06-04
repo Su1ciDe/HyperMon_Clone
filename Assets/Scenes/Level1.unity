@@ -1497,7 +1497,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: dfe95d79ab4b2574687269e2649883a5, type: 3}
     - target: {fileID: 1032403616196857621, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: 1000
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 1032403616249202882, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
@@ -2189,15 +2189,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1032403614693939199, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_Color.g
-      value: 0.85353756
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1032403614693939199, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.48553276
       objectReference: {fileID: 0}
     - target: {fileID: 1032403615248882649, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: 20
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 1032403615661732224, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_Camera
@@ -2206,18 +2206,18 @@ PrefabInstance:
     - target: {fileID: 1032403615674483013, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eda47b8efef9aa84ab9ea6dd41b11f3c, type: 3}
+      objectReference: {fileID: 21300000, guid: 30f9f8db2ba30f04a9e100c4eb260e3f, type: 3}
     - target: {fileID: 1032403616196857621, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: 800
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 1032403616249202882, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: Spider King
+      value: Vampire Bat
       objectReference: {fileID: 0}
     - target: {fileID: 1032403616307990541, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: Epic
+      value: Legendary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
@@ -2682,7 +2682,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b56a6f384dba8e1409689dd37f1061c2, type: 3}
     - target: {fileID: 1032403616196857621, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: 700
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1032403616249202882, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
@@ -2887,7 +2887,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688318278}
-  m_LocalRotation: {x: 0.16018243, y: -0.0000004716271, z: 0.00000007653463, w: 0.9870874}
+  m_LocalRotation: {x: 0.16018228, y: -0.000000015338037, z: 0.0000000024890214, w: 0.9870875}
   m_LocalPosition: {x: 0, y: 5, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3589,6 +3589,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: da8bf11ba0482f24ba8f1cd187147c81, type: 2}
   - {fileID: 11400000, guid: 030ee487f773bbe44b99d5dc9277063f, type: 2}
   hyperBallHolder: {fileID: 2002183586}
+--- !u!1 &848513794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 194e7d61da92fab499ebe16513bbb995, type: 3}
+  m_PrefabInstance: {fileID: 1259479085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &848513796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848513794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc116e70884640ac92994404be6a559b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &870718925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3770,7 +3787,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 50
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3795,8 +3812,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.15905079, y: 0.13670352, z: -0.021903634, w: -0.97751486}
-  m_LocalPosition: {x: 5.55, y: 9.47, z: 139.13}
+  m_LocalRotation: {x: 0.16018228, y: -0.000000015338037, z: 0.0000000024890214, w: 0.9870875}
+  m_LocalPosition: {x: 0, y: 5, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4456,7 +4473,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 9bcaff09b5367294b9506be9a13a3b20, type: 3}
     - target: {fileID: 1032403616196857621, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: 750
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 1032403616249202882, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
@@ -5294,6 +5311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 194e7d61da92fab499ebe16513bbb995, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8a4c26db0ef29984caafa76552dec472, type: 2}
     - target: {fileID: 5866666021909216657, guid: 194e7d61da92fab499ebe16513bbb995, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -8143,7 +8164,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 416f9ecc8ab8afd4aa5c004b12c31c83, type: 3}
     - target: {fileID: 1032403616196857621, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1032403616249202882, guid: 84bfa0ae6e491de498cf229791dfb7ff, type: 3}
       propertyPath: m_text
@@ -8470,6 +8491,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 478350951896312180, guid: dbaf7cc606b290a45a4ec4ffcd687695, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8a4c26db0ef29984caafa76552dec472, type: 2}
     - target: {fileID: 6325837846972663569, guid: dbaf7cc606b290a45a4ec4ffcd687695, type: 3}
       propertyPath: m_Camera
       value: 

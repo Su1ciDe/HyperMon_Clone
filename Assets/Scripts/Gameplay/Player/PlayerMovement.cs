@@ -23,12 +23,8 @@ public class PlayerMovement : MonoBehaviour
 	public void JumpBack()
 	{
 		CanMove = false;
-		//TODO: jump animation
+		Player.Instance.Animations.SetTrigger(AnimationType.Jump);
 
-		transform.DOJump(transform.position - 10 * Vector3.forward, 1, 1, .5f).OnComplete(() =>
-		{
-			CanMove = true;
-			//TODO: running animaiton
-		});
+		transform.DOJump(transform.position - 10 * Vector3.forward, 1, 1, .5f).OnComplete(() => CanMove = true);
 	}
 }

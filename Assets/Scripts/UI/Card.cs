@@ -9,10 +9,8 @@ public class Card : MonoBehaviour
 	[SerializeField] private Image cardBG;
 	[SerializeField] private Button button;
 
-	private int index;
 	private HyperMon pairedHyperMon;
-
-
+	
 	private void Awake()
 	{
 		button = GetComponent<Button>();
@@ -24,7 +22,6 @@ public class Card : MonoBehaviour
 		txtPower.SetText(hyperMon.HyperMonAttributes.Power.ToString());
 		imgHyperMon.sprite = hyperMon.HyperMonAttributes.Image;
 		cardBG.color = GameManager.Instance.ColorScheme.RarityColorPairs[hyperMon.HyperMonAttributes.Rarity];
-		index = Player.Instance.HyperMonController.HyperMonCount - 1;
 
 		button.onClick.AddListener(Select);
 	}

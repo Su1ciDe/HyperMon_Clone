@@ -11,7 +11,6 @@ public class Player : Singleton<Player>, ICollector
 		{
 			score = value;
 			UIManager.Instance.ArenaUI.txtPlayerScore.SetText(score.ToString());
-			Debug.Log(score);
 		}
 	}
 
@@ -19,6 +18,7 @@ public class Player : Singleton<Player>, ICollector
 	public PlayerController PlayerController { get; private set; }
 	public HyperMonController HyperMonController { get; private set; }
 	public PlayerUI PlayerUI { get; private set; }
+	public AnimationController Animations { get; private set; }
 
 	private void Awake()
 	{
@@ -26,6 +26,7 @@ public class Player : Singleton<Player>, ICollector
 		PlayerMovement = GetComponent<PlayerMovement>();
 		HyperMonController = GetComponent<HyperMonController>();
 		PlayerUI = GetComponentInChildren<PlayerUI>();
+		Animations = GetComponentInChildren<AnimationController>();
 	}
 
 	private void OnEnable()
@@ -46,6 +47,8 @@ public class Player : Singleton<Player>, ICollector
 	{
 		PlayerController.CanControl = true;
 		PlayerMovement.CanMove = true;
+
+		Animations.SetBool(AnimationType.Running, true);
 	}
 
 	private void OnLevelSucceed()

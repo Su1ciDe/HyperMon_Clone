@@ -646,7 +646,7 @@ MonoBehaviour:
   maxHyperMonCount: 3
   HyperMonPrefab: {fileID: 1189059286242665654, guid: 282a64c77f0c926438bf1eb486df8cf1, type: 3}
   hyperBallHolder: {fileID: 1159458602680984663}
-  hyperMonHolder: {fileID: 0}
+  hyperMonsHolder: {fileID: 0}
   followDamping: 10
 --- !u!1 &7896022566186781267
 GameObject:
@@ -816,3 +816,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1462c179158aae540931a6efbb1c3e57, type: 3}
   m_PrefabInstance: {fileID: 6325837848834430181}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6559648782201547188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1462c179158aae540931a6efbb1c3e57, type: 3}
+  m_PrefabInstance: {fileID: 6325837848834430181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8993966654932804001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559648782201547188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc116e70884640ac92994404be6a559b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
