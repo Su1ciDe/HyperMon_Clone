@@ -33,6 +33,7 @@ public class HyperMon : MonoBehaviour
 	private IEnumerator AttackCoroutine(HyperMon target)
 	{
 		//TODO: animation
+		
 		yield return new WaitForSeconds(1);
 
 		target.TakeDamage(HyperMonAttributes.Power);
@@ -41,20 +42,16 @@ public class HyperMon : MonoBehaviour
 	public void TakeDamage(int damage)
 	{
 		if (HyperMonAttributes.Power - damage <= 0)
-		{
-			StartCoroutine(Die());
-		}
+			Die();
 	}
 
-	private IEnumerator Die()
+	private void Die()
 	{
 		//TODO: animation
 
-		yield return new WaitForSeconds(1);
-
-		if (Trainer.Equals(TrainerType.Player))
+		if (Trainer == TrainerType.Player)
 			Arena.Instance.Enemy.Score++;
-		else if (Trainer.Equals(TrainerType.Enemy))
+		else if (Trainer == TrainerType.Enemy)
 			Player.Instance.Score++;
 	}
 }

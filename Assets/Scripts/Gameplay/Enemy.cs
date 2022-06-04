@@ -12,9 +12,10 @@ public class Enemy : MonoBehaviour
 		{
 			score = value;
 			UIManager.Instance.ArenaUI.txtEnemyScore.SetText(score.ToString());
+			Debug.Log(score);
 		}
 	}
-	
+
 	[SerializeField] private List<HyperMonSO> enemyHyperMons = new List<HyperMonSO>();
 	private List<HyperMon> hyperMons = new List<HyperMon>();
 
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
 
 	public YieldInstruction ThrowHyperBall()
 	{
-		int randomBallIndex = Random.Range(0, enemyHyperMons.Count - 1);
+		int randomBallIndex = Random.Range(0, hyperMons.Count - 1);
 		var hyperMon = Arena.Instance.DuelingEnemyHyperMon = hyperMons[randomBallIndex];
 		hyperMons.RemoveAt(randomBallIndex);
 
@@ -45,8 +46,8 @@ public class Enemy : MonoBehaviour
 		hyperBall.SetActive(true);
 		//TODO: animation
 		seq.AppendInterval(.25f);
-		seq.AppendCallback(() =>  hyperBall.transform.SetParent(null));
-		seq.Append(hyperBall.transform.DOJump(Arena.Instance.EnemyHmPosition.position, 1, 1, .75f));
+		seq.AppendCallback(() => hyperBall.transform.SetParent(null));
+		seq.Append(hyperBall.transform.DOJump(Arena.Instance.EnemyHmPosition.position, 3, 1, .75f));
 		seq.Join(hyperBall.transform.DORotate(720 * Vector3.right, .75f, RotateMode.FastBeyond360).SetEase(Ease.Linear));
 		seq.AppendCallback(() =>
 		{
@@ -58,8 +59,9 @@ public class Enemy : MonoBehaviour
 			hyperBall.transform.SetParent(hyperBallHolder);
 			hyperBall.transform.localPosition = Vector3.zero;
 			hyperBall.transform.localRotation = Quaternion.identity;
+			hyperBall.SetActive(false);
 		});
-		seq.Append(hyperMon.transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce));
+		seq.Append(hyperMon.transform.DOScale(3 * Vector3.one, .5f).SetEase(Ease.OutBounce));
 		seq.AppendCallback(() => hyperMon.Ui.SetActive(true));
 
 		return seq.WaitForCompletion();

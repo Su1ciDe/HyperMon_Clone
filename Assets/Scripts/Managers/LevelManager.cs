@@ -8,7 +8,7 @@ public class LevelManager : Singleton<LevelManager>
 
 	public static int CurrentLevel
 	{
-		get => PlayerPrefs.GetInt("CurrentLevel", 0);
+		get => PlayerPrefs.GetInt("CurrentLevel", 1);
 		set
 		{
 			PlayerPrefs.SetInt("CurrentLevel", value);

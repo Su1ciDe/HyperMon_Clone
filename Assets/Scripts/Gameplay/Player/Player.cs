@@ -11,6 +11,7 @@ public class Player : Singleton<Player>, ICollector
 		{
 			score = value;
 			UIManager.Instance.ArenaUI.txtPlayerScore.SetText(score.ToString());
+			Debug.Log(score);
 		}
 	}
 

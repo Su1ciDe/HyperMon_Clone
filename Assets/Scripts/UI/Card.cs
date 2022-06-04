@@ -10,6 +10,7 @@ public class Card : MonoBehaviour
 	[SerializeField] private Button button;
 
 	private int index;
+	private HyperMon pairedHyperMon;
 
 
 	private void Awake()
@@ -19,6 +20,7 @@ public class Card : MonoBehaviour
 
 	public void Setup(HyperMon hyperMon)
 	{
+		pairedHyperMon = hyperMon;
 		txtPower.SetText(hyperMon.HyperMonAttributes.Power.ToString());
 		imgHyperMon.sprite = hyperMon.HyperMonAttributes.Image;
 		cardBG.color = GameManager.Instance.ColorScheme.RarityColorPairs[hyperMon.HyperMonAttributes.Rarity];
@@ -29,6 +31,7 @@ public class Card : MonoBehaviour
 
 	public void Select()
 	{
-		Arena.OnSelectForDuel?.Invoke(Player.Instance.HyperMonController.HyperMons[index]);
+		Arena.OnSelectForDuel?.Invoke(pairedHyperMon);
+		Destroy(gameObject, 1);
 	}
 }

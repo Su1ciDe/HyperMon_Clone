@@ -64,7 +64,7 @@ public class HyperMonController : MonoBehaviour
 	public void CollectHyperBall(HyperBall collectedHyperBall)
 	{
 		player.TotalHyperPoint += collectedHyperBall.Value;
-		
+
 		OnHyperBallCollect?.Invoke(collectedHyperBall);
 	}
 
@@ -112,6 +112,7 @@ public class HyperMonController : MonoBehaviour
 
 	public void ThrowHyperBall(HyperMon hyperMon)
 	{
+		Arena.Instance.DuelingPlayerHyperMon = hyperMon;
 		HyperMons.Remove(hyperMon);
 
 		Sequence seq = DOTween.Sequence();
@@ -119,7 +120,7 @@ public class HyperMonController : MonoBehaviour
 		//TODO: animation
 		seq.AppendInterval(.25f);
 		seq.AppendCallback(() => hyperBall.transform.SetParent(null));
-		seq.Append(hyperBall.transform.DOJump(Arena.Instance.PlayerHmPosition.position, 1, 1, .75f));
+		seq.Append(hyperBall.transform.DOJump(Arena.Instance.PlayerHmPosition.position, 3, 1, .75f));
 		seq.Join(hyperBall.transform.DORotate(720 * Vector3.right, .75f, RotateMode.FastBeyond360).SetEase(Ease.Linear));
 		seq.AppendCallback(() =>
 		{
@@ -131,8 +132,9 @@ public class HyperMonController : MonoBehaviour
 			hyperBall.transform.SetParent(hyperBallHolder);
 			hyperBall.transform.localPosition = Vector3.zero;
 			hyperBall.transform.localRotation = Quaternion.identity;
+			hyperBall.SetActive(false);
 		});
-		seq.Append(hyperMon.transform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBounce));
+		seq.Append(hyperMon.transform.DOScale(3 * Vector3.one, .5f).SetEase(Ease.OutBounce));
 		seq.AppendInterval(1);
 		seq.AppendCallback(() => StartCoroutine(Arena.Instance.Fight()));
 	}
