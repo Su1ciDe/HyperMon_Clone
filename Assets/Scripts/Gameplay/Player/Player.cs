@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : Singleton<Player>
+public class Player : Singleton<Player>, ICollector
 {
 	public int TotalHyperPoint { get; set; }
 	private int score;
@@ -17,12 +17,14 @@ public class Player : Singleton<Player>
 	public PlayerMovement PlayerMovement { get; private set; }
 	public PlayerController PlayerController { get; private set; }
 	public HyperMonController HyperMonController { get; private set; }
+	public PlayerUI PlayerUI { get; private set; }
 
 	private void Awake()
 	{
 		PlayerController = GetComponent<PlayerController>();
 		PlayerMovement = GetComponent<PlayerMovement>();
 		HyperMonController = GetComponent<HyperMonController>();
+		PlayerUI = GetComponentInChildren<PlayerUI>();
 	}
 
 	private void OnEnable()
@@ -55,5 +57,10 @@ public class Player : Singleton<Player>
 	{
 		PlayerController.CanControl = false;
 		PlayerMovement.CanMove = false;
+	}
+
+	public void OnCollect(HyperBall hyperBall)
+	{
+		HyperMonController.CollectHyperBall(hyperBall);
 	}
 }

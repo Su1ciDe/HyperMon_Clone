@@ -64,9 +64,7 @@ public class HyperMonController : MonoBehaviour
 	public void CollectHyperBall(HyperBall collectedHyperBall)
 	{
 		player.TotalHyperPoint += collectedHyperBall.Value;
-
-		//
-
+		
 		OnHyperBallCollect?.Invoke(collectedHyperBall);
 	}
 

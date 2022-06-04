@@ -11,19 +11,23 @@ public class ArenaUI : MonoBehaviour
 	[SerializeField] private Card cardPrefab;
 	public Transform CardPanel;
 
-	private void OnEnable()
+	private void Awake()
 	{
 		HyperMonController.OnHyperMonAdd += AddCard;
+		gameObject.SetActive(false);
+	}
+
+	private void OnEnable()
+	{
 		Arena.OnSelectForDuel += OnCardSelected;
 	}
 
 	private void OnDisable()
 	{
-		HyperMonController.OnHyperMonAdd -= AddCard;
 		Arena.OnSelectForDuel -= OnCardSelected;
 	}
 
-	public void AddCard(HyperMon addedHyperMon)
+	private void AddCard(HyperMon addedHyperMon)
 	{
 		var card = Instantiate(cardPrefab, CardPanel);
 		card.Setup(addedHyperMon);

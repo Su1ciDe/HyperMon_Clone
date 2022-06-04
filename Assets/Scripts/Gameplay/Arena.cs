@@ -21,8 +21,8 @@ public class Arena : Singleton<Arena>
 
 	private void Awake()
 	{
-		Enemy = GetComponentInChildren<Enemy>();
-		vcam_Arena = GetComponentInChildren<CinemachineVirtualCamera>();
+		Enemy = GetComponentInChildren<Enemy>(true);
+		vcam_Arena = GetComponentInChildren<CinemachineVirtualCamera>(true);
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -32,9 +32,11 @@ public class Arena : Singleton<Arena>
 			player.PlayerController.CanControl = false;
 			player.PlayerMovement.CanMove = false;
 			player.HyperMonController.CanFollow = false;
-			
+			player.PlayerUI.gameObject.SetActive(false);
+
 			vcam_Arena.gameObject.SetActive(true);
 
+			player.transform.localScale = 3 * Vector3.one;
 			player.transform.DOMove(playerPosition.position, 1f).SetEase(Ease.Linear).OnComplete(() => StartCoroutine(Duel()));
 		}
 	}
@@ -57,7 +59,7 @@ public class Arena : Singleton<Arena>
 		DuelingEnemyHyperMon.Attack(DuelingPlayerHyperMon);
 
 		yield return new WaitForSeconds(2);
-		
+
 		DuelingPlayerHyperMon.gameObject.SetActive(false);
 		DuelingEnemyHyperMon.gameObject.SetActive(false);
 

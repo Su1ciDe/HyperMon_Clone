@@ -7,10 +7,10 @@ public class Card : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI txtPower;
 	[SerializeField] private Image imgHyperMon;
 	[SerializeField] private Image cardBG;
+	[SerializeField] private Button button;
 
 	private int index;
 
-	private Button button;
 
 	private void Awake()
 	{

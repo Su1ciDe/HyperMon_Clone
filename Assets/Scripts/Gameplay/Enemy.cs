@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 	[SerializeField] private Transform hyperBallHolder;
 	private GameObject hyperBall;
 
-	private void Awake()
+	private void Start()
 	{
 		foreach (var hyperMon in enemyHyperMons)
 		{

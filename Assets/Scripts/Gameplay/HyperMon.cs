@@ -14,7 +14,7 @@ public class HyperMon : MonoBehaviour
 
 	private void Awake()
 	{
-		Ui = GetComponentInChildren<Canvas>().gameObject;
+		Ui = GetComponentInChildren<Canvas>(true).gameObject;
 	}
 
 	public void Setup(HyperMonSO hyperMonSO)
